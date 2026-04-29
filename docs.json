@@ -75,7 +75,7 @@
         "tab": "API V2 Integração",
         "groups": [
           {
-            "group": "Visão Geral",
+            "group": "Introdução",
             "pages": [
               "api-v2-integracao/introduction"
             ]
