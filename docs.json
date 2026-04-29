@@ -70,6 +70,24 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "API V2 Integração",
+        "groups": [
+          {
+            "group": "Visão Geral",
+            "pages": [
+              "api-v2-integracao/introduction"
+            ]
+          },
+          {
+            "group": "Clientes",
+            "pages": [
+              "api-v2-integracao/clientes/get",
+              "api-v2-integracao/clientes/get-by-id"
+            ]
+          }
+        ]
       }
     ],
     "global": {

@@ -1,0 +1,101 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API V2 Integração",
+    "description": "Documentação da API V2 de Integração",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api-zetaarch.taximachine.com.br"
+    }
+  ],
+  "security": [
+    {
+      "basicAuth": [],
+      "apiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/api/v2/integracao/clientes": {
+      "get": {
+        "summary": "Listar Clientes",
+        "description": "Retorna a lista de clientes. O ID do cliente pode ser passado tanto via query params (`/clientes?id={clienteId}`) como via path param (`/clientes/{clienteId}`).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "ID do cliente (numérico)",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "limite",
+            "in": "query",
+            "description": "Limite de resultados por página (numérico)",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pagina",
+            "in": "query",
+            "description": "Número da página (numérico)",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "status_cliente",
+            "in": "query",
+            "description": "Status do cliente (string)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de clientes retornada com sucesso"
+          }
+        }
+      }
+    },
+    "/api/v2/integracao/clientes/{clienteId}": {
+      "get": {
+        "summary": "Obter Cliente por ID",
+        "description": "Retorna os detalhes de um cliente específico. Este endpoint não recebe query parameters.",
+        "parameters": [
+          {
+            "name": "clienteId",
+            "in": "path",
+            "required": true,
+            "description": "ID do cliente (numérico)",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalhes do cliente retornados com sucesso"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      },
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "api-key"
+      }
+    }
+  }
+}
